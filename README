@@ -1,0 +1,20 @@
+
+
+This project grew out of two needs I had that were not satisfied by the json libs out there.
+
+1) The ability to render JSON from arbitrary object graphs without having to modify or annotate any source code, add
+annotations, etc.
+
+2) Be a little bit lax on outputting strictly compliant JSON
+
+
+I wanted this because I was doing some demo code for the Detroit Java User group which required the audience to view
+the json output, and I was more interested in parseable javascript that was meant for primarily human consumption, but
+could be understood by javascript parsers too.
+
+The amount of code you need to encode arbitrary objects is about as minimal as it gets for java since it uses
+pattern matching (a concept from functional programming) to select which encoder to use for a given object.
+
+
+It wouldn't take all that much work to have it output xml, ruby or whatever.
+

@@ -1,0 +1,25 @@
+<project name="JSON Pretty Printer" basedir="." default="compile">
+
+
+	<property name="src.dir" value="${basedir}/src"/>
+	<property name="build.dir" value="${basedir}/build"/>
+	<property name="class.dir" value="${build.dir}/classes"/>
+
+
+	<target name="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${class.dir}"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="true" debuglevel="lines,vars,source"/>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar file="${build.dir}/jsonpp.jar" basedir="${class.dir}" />
+	</target>
+</project>
