@@ -60,7 +60,9 @@ public class JSONPP {
 
 	private void ppseq(Iterator i, int depth) {
 		append("[");
-		carriageReturn(depth + 1);
+		if (i.hasNext()) {
+			carriageReturn(depth + 1);
+		}
 		while (i.hasNext()) {
 			pp(i.next(), depth + 1);
 			if (i.hasNext()) {
@@ -75,7 +77,9 @@ public class JSONPP {
 
 	private void pptree(Iterator<Map.Entry> entries, int depth) {
 		append("{");
-		carriageReturn(depth + 1);
+		if (entries.hasNext()) {
+			carriageReturn(depth + 1);
+		}
 		while (entries.hasNext()) {
 			Map.Entry entry = entries.next();
 			append(encodeKey.call(entry.getKey()) + ": ");
